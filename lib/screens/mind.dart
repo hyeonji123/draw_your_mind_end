@@ -21,9 +21,10 @@ class MindScreenState extends State<MindScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Center(
           child: Text(
-            '너의 마음을 그려줘',
+            '너의 마음을 그려봐',
             style: TextStyle(fontFamily: 'Bmhan', fontSize: 22.0),
           ),
         ),
@@ -47,10 +48,9 @@ class MindScreenState extends State<MindScreen> {
             Container(
               width: 235,
               height: 61,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
-              ),
               child: RaisedButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(10.0)),
                 color: Color(0xFFF4F6F6),
                 onPressed: () {
                   Navigator.push(
@@ -73,7 +73,7 @@ class MindScreenState extends State<MindScreen> {
               height: 61,
               child: RaisedButton(
                 shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(30.0)),
+                    borderRadius: new BorderRadius.circular(10.0)),
                 color: Color(0xFFF4F6F6),
                 onPressed: () {
                   Navigator.push(
@@ -96,6 +96,8 @@ class MindScreenState extends State<MindScreen> {
               height: 61,
               decoration: BoxDecoration(),
               child: RaisedButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(10.0)),
                 color: Color(0xFFF4F6F6),
                 onPressed: () {
                   Navigator.push(

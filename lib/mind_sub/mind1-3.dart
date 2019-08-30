@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'mind2.dart';
 import '../common.dart';
 
 class Mind13 extends StatelessWidget {
@@ -30,18 +29,36 @@ class Mind13 extends StatelessWidget {
                 ),
                 SizedBox(width: double.infinity, height: 30.0),
                 Text(
-                  '미술상담은 아이의 태도 관찰과 전문가의 질문이 중요합니다',
-                  style: TextStyle(fontFamily: 'Bmhan', fontSize: 20.0),
+                  '미술상담은 아이의 태도 관찰과',
+                  style: TextStyle(fontFamily: 'Bmhan', fontSize: 25.0),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  '전문가의 질문이 중요합니다',
+                  style: TextStyle(fontFamily: 'Bmhan', fontSize: 25.0),
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(width: double.infinity, height: 30.0),
                 Text(
-                  '전문가와의 상담으로 우리 아이에 대해 보다 많은 것을 알 수 있을 것입니다',
-                  style: TextStyle(fontFamily: 'Bmhan', fontSize: 20.0),
+                  '전문가와의 상담으로 우리 아이를',
+                  style: TextStyle(fontFamily: 'Bmhan', fontSize: 25.0),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  '보다 많이 이해할 수 있을 것입니다',
+                  style: TextStyle(fontFamily: 'Bmhan', fontSize: 25.0),
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(width: double.infinity, height: 30.0),
                 Text(
-                  '지금 바로 전문가의 상담과 콘텐츠를 이용해 보세요',
-                  style: TextStyle(fontFamily: 'Bmhan', fontSize: 20.0),
+                  '지금 바로 전문가의 상담과',
+                  style: TextStyle(fontFamily: 'Bmhan', fontSize: 25.0),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  '프로그램을 이용해 보세요',
+                  style: TextStyle(fontFamily: 'Bmhan', fontSize: 25.0),
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(width: double.infinity, height: 30.0),
                 Row(
@@ -53,6 +70,7 @@ class Mind13 extends StatelessWidget {
                         width: 140,
                         height: 60,
                         child: RaisedButton(
+                          color: Color(0xFFFFF494),
                           onPressed: () {
                             Navigator.popUntil(
                               context,
@@ -73,16 +91,14 @@ class Mind13 extends StatelessWidget {
                         width: 140,
                         height: 60,
                         child: RaisedButton(
+                          color: Color(0xFFFFF494),
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Mind2()),
-                            );
+                            Navigator.pushNamed(context, '/mind22');
                           },
                           child: const Text(
-                            '아이의 속마음',
+                            '전문가 상담',
                             style:
-                                TextStyle(fontSize: 18, fontFamily: 'Jalnan'),
+                                TextStyle(fontSize: 20, fontFamily: 'Jalnan'),
                           ),
                         ),
                       ),

@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_camera_app/common.dart';
 import 'package:flutter_camera_app/guide_sub/guide2.dart';
 
+import '../camera.dart';
+import '../common.dart';
+
 class GuideScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Center(
           child: Text(
-            '너의 마음을 그려줘',
+            '너의 마음을 그려봐',
             style: TextStyle(fontFamily: 'Bmhan', fontSize: 22.0),
           ),
         ),
@@ -81,7 +85,8 @@ class GuideScreen extends StatelessWidget {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Guide2()),
+                              MaterialPageRoute(
+                                  builder: (context) => VideoRecorderExample()),
                             );
                           },
                           child: Image.asset(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_camera_app/mind_sub/mind3-3.dart';
+import 'package:flutter_camera_app/guide_sub/program2.dart';
 
 import '../common.dart';
 
@@ -9,6 +9,7 @@ const activeCardColour = Color(0xFFFFFFFF);
 const childContent31 = '테스트 이름';
 const childContent32 = '상담사 이름';
 const childContent33 = '비용: 4회 100,000원';
+const imagesrc2 = 'assets/images/flower1';
 
 class ProgrameScreen extends StatefulWidget {
   @override
@@ -20,9 +21,10 @@ class _ProgrameScreenState extends State<ProgrameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Center(
           child: Text(
-            '간단 테스트',
+            '정기 프로그램',
             style: TextStyle(fontFamily: 'Bmhan', fontSize: 22.0),
           ),
         ),
@@ -30,57 +32,82 @@ class _ProgrameScreenState extends State<ProgrameScreen> {
       ),
       body: BackgroundContainer(
         imgSrc: "assets/images/back1.jpg",
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              width: double.infinity,
-              height: 20,
-            ),
-            Center(
-              child: Text(
-                '원하는 프로그램을 찾아 신청하세요!',
-                style: TextStyle(fontSize: 20, fontFamily: 'Jalnan'),
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                width: double.infinity,
+                height: 20,
               ),
-            ),
-            GridView.count(
-              crossAxisCount: 2,
-              shrinkWrap: true,
-              children: <Widget>[
-                ReusableCard3(
-                  colour: activeCardColour,
-                  cardChild3: CardChild3(
-                    childContent31: '물고기 테스트',
-                    childContent32: '오수안 상담사',
-                    childContent33: '4회 100,000원',
-                  ),
+              Center(
+                child: Text(
+                  '원하는 프로그램을 찾아 신청하세요!',
+                  style: TextStyle(fontSize: 20, fontFamily: 'Jalnan'),
                 ),
-                ReusableCard3(
-                  colour: activeCardColour,
-                  cardChild3: CardChild3(
-                    childContent31: '물고기 테스트',
-                    childContent32: '오수안 상담사',
-                    childContent33: '4회 100,000원',
+              ),
+              GridView.count(
+                physics: ScrollPhysics(),
+                crossAxisCount: 2,
+                shrinkWrap: true,
+                children: <Widget>[
+                  ReusableCard3(
+                    colour: activeCardColour,
+                    cardChild3: CardChild3(
+                      childContent31: '나를 찾는 미술여행',
+                      childContent32: '오수안 상담사',
+                      childContent33: '4회 100,000원',
+                      imagesrc2: 'assets/images/flower1.jpg',
+                    ),
                   ),
-                ),
-                ReusableCard3(
-                  colour: activeCardColour,
-                  cardChild3: CardChild3(
-                    childContent31: '물고기 테스트',
-                    childContent32: '오수안 상담사',
-                    childContent33: '4회 100,000원',
+                  ReusableCard3(
+                    colour: activeCardColour,
+                    cardChild3: CardChild3(
+                      childContent31: '학교 적응 프로그램',
+                      childContent32: '강상훈 상담사',
+                      childContent33: '4회 80,000원',
+                      imagesrc2: 'assets/images/school2.jpeg',
+                    ),
                   ),
-                ),
-                ReusableCard3(
-                  colour: activeCardColour,
-                  cardChild3: CardChild3(
-                    childContent31: '물고기 테스트',
-                    childContent32: '오수안 상담사',
-                    childContent33: '4회 100,000원',
+                  ReusableCard3(
+                    colour: activeCardColour,
+                    cardChild3: CardChild3(
+                      childContent31: '어린이를 위한 미술교육',
+                      childContent32: '강다혜 상담사',
+                      childContent33: '2회 50,000원',
+                      imagesrc2: 'assets/images/school3.jpeg',
+                    ),
                   ),
-                ),
-              ],
-            )
-          ],
+                  ReusableCard3(
+                    colour: activeCardColour,
+                    cardChild3: CardChild3(
+                      childContent31: '미술치료 프로그램',
+                      childContent32: '김재환 상담사',
+                      childContent33: '6회 120,000원',
+                      imagesrc2: 'assets/images/draw12.jpeg',
+                    ),
+                  ),
+                  ReusableCard3(
+                    colour: activeCardColour,
+                    cardChild3: CardChild3(
+                      childContent31: '나도 이제 어른이에요',
+                      childContent32: '송지민 상담사',
+                      childContent33: '3회 70,000원',
+                      imagesrc2: 'assets/images/socie.jpeg',
+                    ),
+                  ),
+                  ReusableCard3(
+                    colour: activeCardColour,
+                    cardChild3: CardChild3(
+                      childContent31: '사회성을 기르는 미술교육',
+                      childContent32: '옥혜원 상담사',
+                      childContent33: '5회 100,000원',
+                      imagesrc2: 'assets/images/socie2.jpeg',
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -102,7 +129,7 @@ class ReusableCard3 extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Mind33()),
+            MaterialPageRoute(builder: (context) => Program2()),
           );
         },
         child: SizedBox(
@@ -123,11 +150,16 @@ class ReusableCard3 extends StatelessWidget {
 }
 
 class CardChild3 extends StatelessWidget {
-  CardChild3({this.childContent31, this.childContent32, this.childContent33});
+  CardChild3(
+      {this.childContent31,
+      this.childContent32,
+      this.childContent33,
+      this.imagesrc2});
 
   final String childContent31;
   final String childContent32;
   final String childContent33;
+  final String imagesrc2;
 
   @override
   Widget build(BuildContext context) {
@@ -135,7 +167,7 @@ class CardChild3 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Image.asset(
-          'assets/images/ari.png',
+          imagesrc2,
           width: 80.0,
           height: 80.0,
         ),

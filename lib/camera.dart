@@ -23,6 +23,8 @@ class _VideoRecorderExampleState extends State<VideoRecorderExample> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  String content = '';
+
   @override
   void initState() {
     super.initState();
@@ -49,18 +51,83 @@ class _VideoRecorderExampleState extends State<VideoRecorderExample> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: const Text('Camera example'),
+        title: Text(
+          '영상 촬영',
+          style: TextStyle(fontFamily: 'Bmhan', fontSize: 22.0),
+        ),
+        backgroundColor: Color(0xFFFFD547),
       ),
       body: Column(
         children: <Widget>[
           Expanded(
             child: Container(
               child: Padding(
-                padding: const EdgeInsets.all(1.0),
-                child: Center(
-                  child: _cameraPreviewWidget(),
-                ),
-              ),
+                  padding: const EdgeInsets.all(1.0),
+                  child: Stack(
+                    alignment: FractionalOffset.center,
+                    children: <Widget>[
+                      Positioned.fill(child: _cameraPreviewWidget()),
+                      Positioned.fill(
+                          child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              RaisedButton(
+                                color: Color(0xFFFFF494),
+                                child: Text(
+                                  '순서 1',
+                                  style: TextStyle(
+                                      fontSize: 16, fontFamily: 'Jalnan'),
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    content = '먼저 집을 그려주세요';
+                                  });
+                                },
+                              ),
+                              RaisedButton(
+                                color: Color(0xFFFFF494),
+                                child: Text(
+                                  '순서 2',
+                                  style: TextStyle(
+                                      fontSize: 16, fontFamily: 'Jalnan'),
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    content = '나무를 그려주세요';
+                                  });
+                                },
+                              ),
+                              RaisedButton(
+                                color: Color(0xFFFFF494),
+                                child: Text(
+                                  '순서 3',
+                                  style: TextStyle(
+                                      fontSize: 16, fontFamily: 'Jalnan'),
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    content = '사람을 그려주세요';
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                          Expanded(
+                              child: Center(
+                                  child: Text(
+                            content,
+                            style: TextStyle(
+                                fontFamily: 'Jalnan',
+                                fontSize: 18.0,
+                                color: Colors.white),
+                          )))
+                        ],
+                      )),
+                    ],
+                  )),
               decoration: BoxDecoration(
                 color: Colors.black,
                 border: Border.all(
@@ -154,7 +221,7 @@ class _VideoRecorderExampleState extends State<VideoRecorderExample> {
           children: <Widget>[
             IconButton(
               icon: const Icon(Icons.videocam),
-              color: Colors.blue,
+              color: Color(0xFFFFD547),
               onPressed: controller != null &&
                       controller.value.isInitialized &&
                       !controller.value.isRecordingVideo

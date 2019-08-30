@@ -44,7 +44,7 @@ class LoginState extends State<LoginScreen> {
                           margin: EdgeInsets.only(bottom: 5.0),
                           child: Center(
                             child: Text(
-                              '너의 마음을 그려줘',
+                              '너의 마음을 그려봐',
                               style: TextStyle(
                                   fontFamily: 'Jalnan',
                                   fontSize: 36.0,
