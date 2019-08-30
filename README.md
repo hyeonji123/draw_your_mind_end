@@ -1,4 +1,4 @@
-# flutter_camera_app
+# draw_your_mind
 
 A new Flutter application.
 
